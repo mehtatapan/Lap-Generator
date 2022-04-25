@@ -32,15 +32,31 @@ namespace Lap_Generator_UI.Controllers
             var result = postTask.Result;
             if (result.IsSuccessStatusCode)
             {
-                ModelState.AddModelError(string.Empty, "Upload Successful.");
+                TempData["Message"] = "Lap Time added successfully!";
                 return View();
             }
             else
             {
-                ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
+                int minute = lapTime.minute;
+                int seconds = lapTime.second;
+                int milliseconds = lapTime.millisecond;
+                TempData["AlertMessage"] = GetError(minute, seconds, milliseconds);
                 return View(lapTime);
             }
 
+        }
+
+        public string GetError(int min, int sec, int milli)
+        {
+
+            if (min >= 60)
+                return "Minute value can't be more than 60";
+            if (sec >= 60)
+                return "Second value can't be more than 60";
+            if (milli >= 100)
+                return "Millisecond value can't be more than 60";
+            else
+                return "";
         }
 
         //public async Task<List<Driver>> GetDrivers()

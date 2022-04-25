@@ -1,11 +1,28 @@
 ﻿@model Lap_Generator_UI.Models.LapTime
 
+@if (TempData["AlertMessage"] != null)
+{
+    <br />
+    <div class="alert alert-danger">
+        @Html.Raw(TempData["AlertMessage"])
+    </div>
+    <br />
+}
+@if (TempData["Message"] != null)
+{
+    <br />
+    <div class="alert alert-success">
+        <strong>@Html.Raw(TempData["Message"])</strong>
+    </div>
+    <br />
+}
+
 <h4>LapTime</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" id="ModelError" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="minute" class="control-label"></label>
                 <input asp-for="minute" id="minute" class="form-control" />
@@ -48,34 +65,13 @@
     document.getElementById("milliseconds").value = ranMilliseconds;
     document.getElementById("DriverID").value = ranDriver;
 
+    document.getElementById("minuteError").innerHTML("Hello");
+    document.getElementById("secondsError").value = ranSeconds;
+    document.getElementById("millisecondErrors").value = ranMilliseconds;
+
     setTimeout(function(){
     window.location.reload(1);
     },5000);
-
-    $("#minute").on("input", function () {
-        if ($("#minute").val() > 60) {
-            $("#minuteError").html("Value for minute has to be between 0 to 60.");
-        }
-        else {
-            $("#minuteError").html("");
-        }
-    });
-    $("#seconds").on("input", function () {
-        if ($("#seconds").val() > 60) {
-            $("#secondsError").html("Value for seconds has to be between 0 to 60.");
-        }
-        else {
-            $("#secondsError").html("");
-        }
-    });    
-    $("#milliseconds").on("input", function () {
-        if ($("#milliseconds").val() > 100) {
-            $("#millisecondsError").html("Value for seconds has to be between 0 to 100.");
-        }
-        else {
-            $("#millisecondsError").html("");
-        }
-    });
 
 </script>
 
