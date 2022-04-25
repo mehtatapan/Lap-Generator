@@ -17,13 +17,17 @@ namespace Lap_Generator_UI.Controllers
         {
             return View();
         }
+        public ActionResult Create()
+        {
+            return View();
+        }
 
+        [HttpPost]
         public ActionResult Create(LapTime lapTime)
         {
             //HTTP POST
             var postTask = client.PostAsJsonAsync<LapTime>("LapTimes", lapTime);
             postTask.Wait();
-            RedirectToAction("Create(lapTime)", "Home");
 
             var result = postTask.Result;
             if (result.IsSuccessStatusCode)

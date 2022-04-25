@@ -9,17 +9,17 @@
             <div class="form-group">
                 <label asp-for="minute" class="control-label"></label>
                 <input asp-for="minute" id="minute" class="form-control" />
-                <span asp-validation-for="minute" class="text-danger"></span>
+                <span asp-validation-for="minute" id="minuteError" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="second" class="control-label"></label>
                 <input asp-for="second" id="seconds" class="form-control" />
-                <span asp-validation-for="second" class="text-danger"></span>
+                <span asp-validation-for="second" id="secondsError" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="millisecond" class="control-label"></label>
                 <input asp-for="millisecond" id="milliseconds" class="form-control" />
-                <span asp-validation-for="millisecond" class="text-danger"></span>
+                <span asp-validation-for="millisecond" id="millisecondsError" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DriverID" class="control-label"></label>
@@ -51,6 +51,32 @@
     setTimeout(function(){
     window.location.reload(1);
     },5000);
+
+    $("#minute").on("input", function () {
+        if ($("#minute").val() > 60) {
+            $("#minuteError").html("Value for minute has to be between 0 to 60.");
+        }
+        else {
+            $("#minuteError").html("");
+        }
+    });
+    $("#seconds").on("input", function () {
+        if ($("#seconds").val() > 60) {
+            $("#secondsError").html("Value for seconds has to be between 0 to 60.");
+        }
+        else {
+            $("#secondsError").html("");
+        }
+    });    
+    $("#milliseconds").on("input", function () {
+        if ($("#milliseconds").val() > 100) {
+            $("#millisecondsError").html("Value for seconds has to be between 0 to 100.");
+        }
+        else {
+            $("#millisecondsError").html("");
+        }
+    });
+
 </script>
 
 @section Scripts {
