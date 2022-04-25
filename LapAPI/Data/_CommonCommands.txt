@@ -1,0 +1,2 @@
+﻿Add-Migration -Context LapDataContext -o Data\LapMigrations Initial
+Update-Database -Context LapDataContext 

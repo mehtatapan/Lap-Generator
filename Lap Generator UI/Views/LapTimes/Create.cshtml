@@ -1,0 +1,59 @@
+﻿@model Lap_Generator_UI.Models.LapTime
+
+<h4>LapTime</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="minute" class="control-label"></label>
+                <input asp-for="minute" id="minute" class="form-control" />
+                <span asp-validation-for="minute" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="second" class="control-label"></label>
+                <input asp-for="second" id="seconds" class="form-control" />
+                <span asp-validation-for="second" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="millisecond" class="control-label"></label>
+                <input asp-for="millisecond" id="milliseconds" class="form-control" />
+                <span asp-validation-for="millisecond" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DriverID" class="control-label"></label>
+                <select asp-for="DriverID" id= "DriverID" class="form-control">
+                    <option value="">Select Driver</option>
+                    <option value="1">Gregory A. House</option>
+                    <option value="2">Doogie R. Houser</option>
+                    <option value="3">Charles B. Xavier</option>
+                    <option value="4">Tapan P. Mehta</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    var ranMinute = Math.floor(Math.random() * 80 + 1);
+    var ranSeconds = Math.floor(Math.random() * 80 + 1);
+    var ranMilliseconds = Math.floor(Math.random() * 100 + 1);
+    var ranDriver = Math.floor(Math.random() * 3 + 1);
+
+    document.getElementById("minute").value = ranMinute;
+    document.getElementById("seconds").value = ranSeconds;
+    document.getElementById("milliseconds").value = ranMilliseconds;
+    document.getElementById("DriverID").value = ranDriver;
+
+    setTimeout(function(){
+    window.location.reload(1);
+    },5000);
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

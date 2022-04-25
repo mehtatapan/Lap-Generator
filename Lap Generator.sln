@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LapAPI", "LapAPI\LapAPI.csproj", "{2143680A-D41D-49E8-9B1B-2B10F10560C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lap Generator UI", "Lap Generator UI\Lap Generator UI.csproj", "{75C08F4B-C91E-4B67-95DC-0FB543F84FA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2143680A-D41D-49E8-9B1B-2B10F10560C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2143680A-D41D-49E8-9B1B-2B10F10560C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2143680A-D41D-49E8-9B1B-2B10F10560C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2143680A-D41D-49E8-9B1B-2B10F10560C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75C08F4B-C91E-4B67-95DC-0FB543F84FA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C08F4B-C91E-4B67-95DC-0FB543F84FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75C08F4B-C91E-4B67-95DC-0FB543F84FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75C08F4B-C91E-4B67-95DC-0FB543F84FA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A56F75B4-0327-4B89-AF77-DC8DA3F2E1A7}
+	EndGlobalSection
+EndGlobal

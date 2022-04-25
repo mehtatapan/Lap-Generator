@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Lap Generator Project</h1>
+</div>
+
+@model IEnumerable<Lap_Generator_UI.Models.Driver>
+
+<table class="table my-5">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvgTime)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarNum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AvgTime)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
