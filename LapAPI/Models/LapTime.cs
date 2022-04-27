@@ -30,9 +30,9 @@ namespace LapAPI.Models
         [Range(-1, 100, ErrorMessage = "The value for milliseconds ranges from 0 to 100")]
         public int millisecond { get; set; }
 
-        [Display(Name = "Doctor")]
-        [Required(ErrorMessage = "You must select the Primary Care Physician.")]
-        [Range(1, int.MaxValue, ErrorMessage = "Select which doctor does this Lap TIme belong to.")]
+        [Display(Name = "Driver")]
+        [Required(ErrorMessage = "You must select the Driver.")]
+        [Range(1, int.MaxValue, ErrorMessage = "Select which driver does this Lap TIme belong to.")]
         public int DriverID { get; set; }
         public Driver? Driver { get; set; }
     }

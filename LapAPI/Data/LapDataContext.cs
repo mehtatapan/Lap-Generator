@@ -15,7 +15,7 @@ namespace LapAPI.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Add a unique index to the OHIP Number
+            //Add a unique index to the Car Number
             modelBuilder.Entity<Driver>()
             .HasIndex(p => p.CarNum)
             .IsUnique();
